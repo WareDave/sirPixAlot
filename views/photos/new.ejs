@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>Forge an Article</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">SirPixAlot's Home</a>
+					</li>
+					<li>
+						<a href="/photos">Pix An Shit</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<form action="/photos" method="POST">
+				<select name="users">
+					<% for(let i = 0; i < users.length; i++) { %>
+						<option value="<%= users[i]._id %>"><%= users[i].username %></option>
+					<% } %>
+				</select><br>
+                What:<input type="text" name="title" /><br/>
+                URL: <input type="text" name="url" /><br>
+				When, How, Who: <textarea name="description"></textarea><br/>
+				<input type="submit" value="Publish Photo"/>
+			</form>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><%= photos.title %></title>
+	</head>
+	<body>
+		<header>
+			<h1><%= photos.title %></h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">SirPixAlot's Home</a>
+					</li>
+					<li>
+						<a href="/photos">Pix It Up</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<h2>Title: <%= photos.title %></h2>
+                <a href="<%= photos.url %>">URL</a>
+				<p>Description: <%= photos.description %></p>
+            </section>
+            <section>
+                <form action="/photos/<%= photos._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Photo"/>
+                </form>
+            </section>
+            <section>
+                <a href="/photos/<%= photos._id %>/edit">Make It The Shit</a>
+            </section>
+		</main>
+	</body>
+</html>

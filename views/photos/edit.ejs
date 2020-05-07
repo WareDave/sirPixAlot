@@ -19,7 +19,7 @@
 			</nav>
 		</header>
 		<main>
-			<h2>Photo Attributes:</h2>
+			<h2>Photo's BullShit:</h2>
 			<form action="/photos/<%= photos._id %>?_method=PUT" method="POST">
 				<select name="users">
 					<% for(let i = 0; i < users.length; i++) { %>
@@ -30,9 +30,9 @@
 						><%= users[i].username %></option>
 					<% } %>
 				</select><br/>
-                TITLE: <input type="text" name="title" value="<%= photos.title %>"/><br/>
+                What: <input type="text" name="title" value="<%= photos.title %>"/><br/>
                 URL: <input type="text" name="url" value="<%= photos.url %>"/><br>
-				DESCRIPTION: <textarea name="description"><%= photos.body %></textarea><br/>
+				When How Why: <textarea name="description"><%= photos.body %></textarea><br/>
 				<input type="submit" value="Update Photo"/>
 			</form>
 		</main>
