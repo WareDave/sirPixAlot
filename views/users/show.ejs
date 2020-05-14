@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <h1>Show Page for <%= users.username %></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/users">Users Index</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>User</h2>
+            <ul>
+                <li>Name: <%= users.username %></li>
+                <li>Password: <%= users.password %></li>
+            </ul>
+            <ul>
+                <% for(photo in photos) { %>
+                    <li><a href="/photos/<%= photos[photo]._id %>"><%= photos[photo].title %></a></li>
+                <% } %>
+            </ul>
+            <section>
+                <form action="/users/<%= users._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete User" />
+                </form>
+            </section>
+            <section>
+                <a href="/users/<%= users._id %>/edit">Edit</a>
+            </section>
+        </main>
+    </body>
+</html>
